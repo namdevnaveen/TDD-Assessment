@@ -6,6 +6,8 @@ class Calculator
       return numbers.to_i
     elsif numbers.length == 3
       numbers.split(',').map(&:to_i).sum
+    else
+      
     end
   end
 end

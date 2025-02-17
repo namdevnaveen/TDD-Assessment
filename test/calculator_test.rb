@@ -19,4 +19,24 @@ class CalculatorTest < Minitest::Test
   def test_sum_two_digits
     assert_equal 6, Calculator.add('2,4')
   end
+
+  def test_sum_leading_delimiter
+    assert_equal 4, Calculator.add(',,4')
+  end
+
+  def test_sum_trailing_delimiter
+    assert_equal 4, Calculator.add('4,,')
+  end
+
+  def test_sum_no_digit
+    assert_equal 0, Calculator.add('/,,')
+  end
+
+  def test_input_with_blank
+    assert_equal 0, Calculator.add('   ')
+  end
+
+  def test_input_with_more_digits
+    assert_equal 15, Calculator.add('1,2,3,4,5')
+  end
 end
