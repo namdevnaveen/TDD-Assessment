@@ -14,7 +14,7 @@ class Calculator
     handle_negative_numbers(digits)
 
     return "invalid" if digits.length == 1
-    digits.sum
+    digits.sum {|digit| digit < 1001 ? digit : 0 }
   end
 
   private
