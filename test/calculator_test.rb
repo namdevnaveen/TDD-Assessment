@@ -47,4 +47,8 @@ class CalculatorTest < Minitest::Test
   def test_different_delimiter
     assert_equal 3, Calculator.add('//;\n1;2')
   end
+
+  def test_one_negative_number_input
+    assert_raises(RuntimeError) { Calculator.add('1,-2') }
+  end
 end
