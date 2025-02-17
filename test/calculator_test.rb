@@ -39,4 +39,8 @@ class CalculatorTest < Minitest::Test
   def test_input_with_more_digits
     assert_equal 15, Calculator.add('1,2,3,4,5')
   end
+ 
+  def test_invalid_input
+    assert_equal "invalid", Calculator.add('1,\n')
+  end
 end
