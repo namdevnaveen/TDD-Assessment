@@ -43,4 +43,8 @@ class CalculatorTest < Minitest::Test
   def test_invalid_input
     assert_equal "invalid", Calculator.add('1,\n')
   end
+ 
+  def test_different_delimiter
+    assert_equal "3", Calculator.add('//;\n1;2')
+  end
 end
