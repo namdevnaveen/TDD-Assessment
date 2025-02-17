@@ -71,4 +71,8 @@ class CalculatorTest < Minitest::Test
   def test_multi_length_delimiter
     assert_equal 6, Calculator.new('//[***]\n1***2***3').add
   end
+
+  def test_multiple_delimiter
+    assert_equal 6, Calculator.new('//[*][%]\n1*2%3').add
+  end
 end

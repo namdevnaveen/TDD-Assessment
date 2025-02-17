@@ -1,6 +1,6 @@
 class Calculator
   attr_reader :numbers
-  DELIMITERS = %w[, \n // ;]
+  DELIMITERS = %w[, \n // ; * %]
 
   def initialize(str)
     @numbers = str
