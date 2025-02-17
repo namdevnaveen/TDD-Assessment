@@ -45,6 +45,6 @@ class CalculatorTest < Minitest::Test
   end
  
   def test_different_delimiter
-    assert_equal "3", Calculator.add('//;\n1;2')
+    assert_equal 3, Calculator.add('//;\n1;2')
   end
 end
