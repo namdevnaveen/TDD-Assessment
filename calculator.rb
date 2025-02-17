@@ -7,7 +7,8 @@ class Calculator
     elsif numbers.length == 3
       numbers.split(',').map(&:to_i).sum
     else
-      
+      delimiters = %w[, \n]
+      numbers.split(Regexp.union(delimiters)).map(&:to_i).sum
     end
   end
 end
