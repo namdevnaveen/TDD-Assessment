@@ -8,7 +8,13 @@ class Calculator
       numbers.split(',').map(&:to_i).sum
     else
       delimiters = %w[, \n]
-      numbers.split(Regexp.union(delimiters)).map(&:to_i).sum
+      digits = numbers.split(Regexp.union(delimiters)).map(&:to_i)
+      digits.delete(0)
+      if digits.length == 1
+        return "invalid"
+      else
+        return digits.sum
+      end
     end
   end
 end

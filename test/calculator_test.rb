@@ -21,11 +21,11 @@ class CalculatorTest < Minitest::Test
   end
 
   def test_sum_leading_delimiter
-    assert_equal 4, Calculator.add(',,4')
+    assert_equal "invalid", Calculator.add(',,4')
   end
 
   def test_sum_trailing_delimiter
-    assert_equal 4, Calculator.add('4,,')
+    assert_equal "invalid", Calculator.add('4,,')
   end
 
   def test_sum_no_digit
