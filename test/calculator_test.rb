@@ -75,4 +75,16 @@ class CalculatorTest < Minitest::Test
   def test_multiple_delimiter
     assert_equal 6, Calculator.new('//[*][%]\n1*2%3').add
   end
+
+  def test_two_digits_opr
+    assert_equal 6, Calculator.new('2,3', '*').add
+  end
+
+  def test_ignore_greater_numbers_with_opr
+    assert_equal 3, Calculator.new('1001,3', '*').add
+  end
+
+  def test_multiple_delimiter_with_opr
+    assert_equal 6, Calculator.new('//[*][%]\n1*2%3', '*').add
+  end
 end
