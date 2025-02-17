@@ -62,6 +62,9 @@ class CalculatorTest < Minitest::Test
   def test_multiple_negative_number_input
     exception = assert_raises(RuntimeError) { Calculator.new('1,-4,5,-23,-2').add }
     assert_equal("negative numbers not allowed: -4,-23,-2", exception.message)
+  end
 
+  def test_ignore_greater_numbers
+    assert_equal 3, Calculator.new('1001,3').add
   end
 end
