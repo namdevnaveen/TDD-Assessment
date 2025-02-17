@@ -4,6 +4,8 @@ class Calculator
       return 0
     elsif numbers.length == 1
       return numbers.to_i
+    elsif numbers.length == 3
+      numbers.split(',').map(&:to_i).sum
     end
   end
 end

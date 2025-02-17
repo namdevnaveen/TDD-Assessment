@@ -17,6 +17,6 @@ class CalculatorTest < Minitest::Test
   end
 
   def test_sum_two_digits
-    assert_equal 6, Calculator.add('2,3')
+    assert_equal 6, Calculator.add('2,4')
   end
 end
